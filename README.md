@@ -44,6 +44,7 @@
  
 - Reference
   - [Please explain Vim's configuration directories hierarchy](https://stackoverflow.com/questions/14248335/please-explain-vims-configuration-directories-hierarchy)
+  - [Using Vim packages](https://github.com/vim/vim/blob/03c3bd9fd094c1aede2e8fe3ad8fd25b9f033053/runtime/doc/repeat.txt#L515)
 
 -----
 ## Script
