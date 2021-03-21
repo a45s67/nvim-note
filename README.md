@@ -42,6 +42,8 @@
   > With `:set ft?` we can find it's a `text` type file.
   > Then `:set ft=ftypeAAA`, it's `ftypeAAA` type now, and you can find nvim load `ftypeAAA.vim` immediately. 
  
+- Reference
+  - [Please explain Vim's configuration directories hierarchy](https://stackoverflow.com/questions/14248335/please-explain-vims-configuration-directories-hierarchy)
 
 -----
 ## Script
@@ -57,8 +59,8 @@ endfunction
 
 
 - Reference
-  - [usr_41.txt  适用于 Vim 8.2 版本](https://yianwillis.github.io/vimcdoc/doc/usr_41.html)
+  - [usr_41.txt - 适用于 Vim 8.2 版本](https://yianwillis.github.io/vimcdoc/doc/usr_41.html)
 
 ------
 ## Reference
-[usr_41.txt  适用于 Vim 8.2 版本](https://yianwillis.github.io/vimcdoc/doc/usr_41.html)
+[usr_41.txt - 适用于 Vim 8.2 版本](https://yianwillis.github.io/vimcdoc/doc/usr_41.html)
