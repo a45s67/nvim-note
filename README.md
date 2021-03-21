@@ -19,10 +19,10 @@
 
 ```
 - plugin/
-  - The scripts are being loaded when nvim start.
+  - The scripts are loaded when nvim start.
 
 - autoload/
-  - The scripts are being loaded only when its command is called.
+  - The scripts are loaded only when its command is called.
   > For example, the `autoload/load.vim` will be loaded after `plugin/autoload_test.vim` is executed.
   > ```vim
   > " plugin/autoload_test.vim
