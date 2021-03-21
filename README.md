@@ -5,13 +5,36 @@
 `:help 'runtimepath'`
 
 
+
 ```
 ~/.config/nvim
+├── autoload
+│   └── load.vim
 ├── ftplugin
 │   └── ftypeAAA.vim
-├── init.lua
+├── init.vim
+├── plugin
+│   └── autoload_test.vim
 └── test
+
 ```
+- plugin/
+  - The scripts are being loaded when nvim start.
+
+- autoload/
+  - The scripts are being loaded only when its command is called.
+  > For example, the `autoload/load.vim` will be loaded after `plugin/autoload_test.vim` is executed.
+  > ```vim
+  > " plugin/autoload_test.vim
+  > call load#Hello()
+  > ```
+  > ```vim
+  > " autoload/load.vim
+  > function! load#Hello()
+  > echo "hello!"
+  > endfunction
+  > ```
+  > Note: It seems that we should use namespace to invoke the script under `autoload` .
 
 - ftplugin/
   - When a file is opened, script corresponded to the file type will be load
