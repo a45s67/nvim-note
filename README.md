@@ -63,5 +63,3 @@ endfunction
   - [usr_41.txt - 适用于 Vim 8.2 版本](https://yianwillis.github.io/vimcdoc/doc/usr_41.html)
 
 ------
-## Reference
-[usr_41.txt - 适用于 Vim 8.2 版本](https://yianwillis.github.io/vimcdoc/doc/usr_41.html)
