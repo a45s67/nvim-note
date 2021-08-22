@@ -1,5 +1,28 @@
 # nvim-note
 
+### Cheat sheet
+- navigate
+```
+:ls " view current opened files in buffer
+:b xxx.xx  " fuzzy open current opened file
+
+:find xxx " if set path+=** , it will recursive search and open file match xxx . 
+
+```
+
+- split / tab
+```
+:sp [filename]
+:10 sp " split with 10 line width
+:vsp   " vertical split
+
+gt     " go to next tab
+gT
+#gt    " go to # tab (# is a number)
+
+```
+
+
 -------------
 ### Autoload
 `:help 'runtimepath'`
@@ -63,3 +86,7 @@ endfunction
   - [usr_41.txt - 适用于 Vim 8.2 版本](https://yianwillis.github.io/vimcdoc/doc/usr_41.html)
 
 ------
+## Problems
+- Why Ctrl-V not enter visual mode?
+  - Check if you are in Window ternimal first. The default setting of wt will map C-V to C-shift-V.
+  - [ref1](https://github.com/microsoft/terminal/issues/5790), [ref2](https://github.com/microsoft/terminal/issues/5641#issuecomment-621186852)  
