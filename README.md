@@ -1,16 +1,41 @@
 # nvim-note
 
 ### Cheat sheet
-- navigate
+#### Navigate
+- General
+  - [ref of `.](https://vi.stackexchange.com/questions/2001/how-do-i-jump-to-the-location-of-my-last-edit)
+
 ```
+C-O " Go to last pos in history
+C-I " Go to next pos in history
+`.  " Go to last edited pos. ( ` is go to mark, . is a special mark automatically setted to last changed pos.) 
+
+" Tags 
+C-] " jump into tag definition (need to use Ctags first)
+
+
+" File navigate
 :ls " view current opened files in buffer
 :b xxx.xx  " fuzzy open current opened file
+C-^ " last opened file
 
+:edit . " Open curr dir tree
 :find xxx " if set path+=** , it will recursive search and open file match xxx . 
 
 ```
+- Plugin - EasyMotion
+```
 
-- split / tab
+```
+- Plugin - FZF + fzf.vim
+```
+:FZF " fuzzy search file
+:Rg " fuzzy search line
+```
+
+
+
+### Split / Tab
 ```
 :sp [filename]
 :10 sp " split with 10 line width
@@ -24,7 +49,7 @@ gT
 
 
 -------------
-### Autoload
+### Autoload Scripts
 `:help 'runtimepath'`
 
 
