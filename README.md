@@ -40,6 +40,8 @@ C-^ " last opened file
 :sp [filename]
 :10 sp " split with 10 line width
 :vsp   " vertical split
+<C-W>l,k,j,h " Go to left/right/up/down split
+<C-W>T (shift+t) " move split to new tab
 
 gt     " go to next tab
 gT
