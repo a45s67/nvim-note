@@ -12,7 +12,7 @@ C-I " Go to next pos in history
 
 " Tags 
 C-] " jump into tag definition (need to use Ctags first)
-
+C-T " jump back
 
 " File navigate
 :ls " view current opened files in buffer
