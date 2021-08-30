@@ -28,6 +28,7 @@ C-^ " last opened file
 
 ```
 - Plugin - FZF + fzf.vim
+> Install **bat** to enable syntax highlighting in preview window. But note there is [Install issue](https://askubuntu.com/questions/1290262/unable-to-install-bat-error-trying-to-overwrite-usr-crates2-json-which) in ubunbu20.04
 ```
 :FZF " fuzzy search file
 :Rg " fuzzy search line
