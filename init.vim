@@ -77,3 +77,11 @@ nnoremap <F3> :FZF<CR>
 
 " ======= airline ====
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='molokai'
+
+" ======== pane =====
+" modify from https://www.reddit.com/r/vim/comments/effwku/transparent_vertical_bar_in_vim/
+" https://stackoverflow.com/questions/9001337/vim-split-bar-styling
+" instead of cterm, we must use "gui" in windowsternimal
+set fillchars+=vert:\|
+hi VertSplit guifg=Blue guibg=NONE gui=NONE
