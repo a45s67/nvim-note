@@ -34,7 +34,8 @@ C-^ " last opened file
 :Rg " fuzzy search line
 ```
 
-
+- edit
+  - [replace multicursor](https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db)
 
 ### Split / Tab
 ```
