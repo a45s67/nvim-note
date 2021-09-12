@@ -30,22 +30,23 @@ nnoremap <C-[> <C-T>
 " ===== Plugin =====
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'easymotion/vim-easymotion'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-fugitive'
+    Plug 'easymotion/vim-easymotion'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 
 
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'kyazdani42/nvim-tree.lua'
+"    Plug 'kyazdani42/nvim-web-devicons' " for file icons
+"    Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 
-Plug 'neovim/nvim-lspconfig'
-Plug 'preservim/tagbar' 
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'preservim/tagbar' 
 
 
 call plug#end()
