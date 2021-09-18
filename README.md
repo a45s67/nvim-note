@@ -38,7 +38,7 @@ C-^ " last opened file
 - edit
   - [replace multicursor](https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db)
 
-### Split / Tab
+#### Split / Tab
 ```
 :sp [filename]
 :10 sp " split with 10 line width
@@ -52,7 +52,10 @@ gT
 
 ```
 
-
+#### Settings Check
+```
+:verbose map <key> " Show the mapping of this key and where its latest setting location.
+```
 -------------
 ### Autoload Scripts
 `:help 'runtimepath'`

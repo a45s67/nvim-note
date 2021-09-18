@@ -44,7 +44,9 @@ call plug#begin('~/.vim/plugged')
 "    Plug 'kyazdani42/nvim-web-devicons' " for file icons
 "    Plug 'kyazdani42/nvim-tree.lua'
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+    
     Plug 'neovim/nvim-lspconfig'
     Plug 'preservim/tagbar' 
 
