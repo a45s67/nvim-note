@@ -45,6 +45,9 @@ call plug#begin('~/.vim/plugged')
 "    Plug 'kyazdani42/nvim-tree.lua'
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " To activate coc on c++, you must install ccl first
+
+
 
     
     Plug 'neovim/nvim-lspconfig'
