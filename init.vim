@@ -10,7 +10,6 @@ nnoremap <A-j> <C-W>j
 nnoremap <A-k> <C-W>k
 nnoremap <A-l> <C-W>l
 nnoremap <A-h> <C-W>h
-
 " tab space
 " https://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim
 "
@@ -39,15 +38,13 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-
+"   Plug 'Mofiqul/vscode.nvim'
 
 "    Plug 'kyazdani42/nvim-web-devicons' " for file icons
 "    Plug 'kyazdani42/nvim-tree.lua'
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " To activate coc on c++, you must install ccl first
-
-
 
     
     Plug 'neovim/nvim-lspconfig'
@@ -93,3 +90,9 @@ let g:airline_theme='molokai'
 set termguicolors " this variable must be enabled for colors to be applied properly
 set fillchars+=vert:\|
 hi VertSplit guifg=Blue guibg=NONE gui=NONE
+" ======== popup =====
+" https://vi.stackexchange.com/questions/23328/change-color-of-coc-suggestion-box
+" https://vi.stackexchange.com/questions/12664/is-there-any-way-to-change-the-popup-menu-color
+set pumblend=15 " :h 'pumblend' for more infomation.
+hi PmenuSel blend=0 guibg=#e6db74 guifg=#232526
+hi Pmenu guibg=#465457
