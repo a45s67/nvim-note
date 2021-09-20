@@ -70,7 +70,9 @@ S[ " Add [] around selected text
 ```
 #### Settings Check
 ``` vim
+:checkhealth " Check if the env for nvim is set properly. E.g. node version, python version.
 :verbose map <key> " Show the mapping of this key and where its latest setting location.
+:hi <Target>" Show one or all color highlighting settings. Like ":hi Pmenu".
 ```
 -------------
 ### Autoload Scripts
