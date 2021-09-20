@@ -5,7 +5,7 @@
 - General
   - [ref of `.](https://vi.stackexchange.com/questions/2001/how-do-i-jump-to-the-location-of-my-last-edit)
 
-```
+``` vim
 C-O " Go to last pos in history
 C-I " Go to next pos in history
 `.  " Go to last edited pos. ( ` is go to mark, . is a special mark automatically setted to last changed pos.) 
@@ -23,23 +23,12 @@ C-^ " last opened file
 :find xxx " if set path+=** , it will recursive search and open file match xxx . 
 
 ```
-- Plugin - EasyMotion
-```
 
-```
-- Plugin - FZF + fzf.vim
-> Install **bat** to enable syntax highlighting in preview window. But note there is [Install issue](https://askubuntu.com/questions/1290262/unable-to-install-bat-error-trying-to-overwrite-usr-crates2-json-which) in ubunbu20.04
-> - `sudo apt install -o Dpkg::Options::="--force-overwrite" bat ripgrep`
-```
-:FZF " fuzzy search file
-:Rg " fuzzy search line
-```
-
-- edit
+#### Edit
   - [replace multicursor](https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db)
 
 #### Split / Tab
-```
+``` vim
 :sp [filename]
 :10 sp " split with 10 line width
 :vsp   " vertical split
@@ -52,8 +41,35 @@ gT
 
 ```
 
-#### Settings Check
+#### Plugin 
+##### surround.vim
+``` vim
+ds[ " auto detect [] and delete it
+cs[{ " auto detect [] and replace it to {}
+
+" in visual mode
+S[ " Add [] around selected text
 ```
+##### EasyMotion
+``` vim
+
+```
+##### FZF + fzf.vim
+> Install **bat** to enable syntax highlighting in preview window. But note there is [Install issue](https://askubuntu.com/questions/1290262/unable-to-install-bat-error-trying-to-overwrite-usr-crates2-json-which) in ubunbu20.04
+> - `sudo apt install -o Dpkg::Options::="--force-overwrite" bat ripgrep`
+``` vim
+:FZF " fuzzy search file
+:Rg " fuzzy search line
+:h :Rg " Show other fzf.vim 
+```
+##### Coc
+``` vim
+```
+##### defx.nvim
+``` vim
+```
+#### Settings Check
+``` vim
 :verbose map <key> " Show the mapping of this key and where its latest setting location.
 ```
 -------------
