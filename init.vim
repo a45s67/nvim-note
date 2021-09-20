@@ -89,5 +89,6 @@ let g:airline_theme='molokai'
 " modify from https://www.reddit.com/r/vim/comments/effwku/transparent_vertical_bar_in_vim/
 " https://stackoverflow.com/questions/9001337/vim-split-bar-styling
 " instead of cterm, we must use "gui" in windowsternimal
+set termguicolors " this variable must be enabled for colors to be applied properly
 set fillchars+=vert:\|
 hi VertSplit guifg=Blue guibg=NONE gui=NONE
