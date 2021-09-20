@@ -33,6 +33,8 @@ nnoremap <silent><buffer><expr> l
 \ defx#is_directory() ?
 \ defx#do_action('open'):
 \ defx#do_action('multi',['drop','quit'])
+nnoremap <silent><buffer><expr> T
+\ defx#do_action('open', 'tabnew')
 nnoremap <silent><buffer><expr> E
 \ defx#do_action('open', 'vsplit')
 nnoremap <silent><buffer><expr> P
