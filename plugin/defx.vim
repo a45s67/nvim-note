@@ -5,12 +5,12 @@
 "cnoreabbrev sf Defx -listed -new
 "      \ -columns=indent:mark:icon:icons:filename:git:size
 "      \ -buffer-name=tab`tabpagenr()`<CR>
-nnoremap <silent><F2> :<C-u>Defx -listed -resume
+nnoremap <F2> :<C-u>Defx -listed -resume
       \ -columns=indent:mark:icon:icons:filename:git:size
       \ -buffer-name=tab`tabpagenr()`
       \ -post-action=jump
-      \ -ignored-files="" 
-      \ -split=vertical -winwidth=50 -direction=topleft <CR>
+      \ -split=vertical -winwidth=50 -direction=topleft 
+      \ -ignored-files=\  <CR>
 "     \ `expand('%:p:h')` isearch=`expand('%:p')`<CR>
 nnoremap <silent><F1> :<C-u>Defx -new `expand('%:p:h')` -search=`expand('%:p')`<CR>
 
@@ -112,3 +112,7 @@ call defx#custom#column('git', 'indicators', {
   \ 'Deleted'   : '✖',
   \ 'Unknown'   : '?'
   \ })
+
+
+
+
