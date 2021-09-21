@@ -1,0 +1,13 @@
+clang++
+%h %cpp --std=c++17
+-Iinclude
+-I/mnt/c/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29910/include
+-I/mnt/c/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29910/atlmfc/include
+-I/mnt/c/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Auxiliary/VS/include
+-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt
+-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
+-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
+-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt
+-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/cppwinrt
+-I/mnt/c/Program Files (x86)/Windows Kits/NETFXSDK/4.8/Include/um
+
