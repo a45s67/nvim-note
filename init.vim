@@ -51,6 +51,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/tagbar' 
 
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
