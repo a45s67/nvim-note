@@ -22,6 +22,7 @@ function! s:goyo_leave()
   set showmode
   set showcmd
   set scrolloff=5
+  source $MYVIMRC
   " ...
 endfunction
 
