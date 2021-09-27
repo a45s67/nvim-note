@@ -36,13 +36,15 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+"    Plug 'vim-airline/vim-airline'
+"    Plug 'vim-airline/vim-airline-themes'
+    Plug 'hoob3rt/lualine.nvim'
 "   Plug 'Mofiqul/vscode.nvim'
 
 "    Plug 'kyazdani42/nvim-web-devicons' " for file icons
 "    Plug 'kyazdani42/nvim-tree.lua'
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'kristijanhusak/defx-git'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " To activate coc on c++, you must install ccl first
     Plug 'jackguo380/vim-lsp-cxx-highlight'
