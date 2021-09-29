@@ -10,12 +10,12 @@ nnoremap <silent><F2> :<C-u>Defx -listed -resume
       \ -buffer-name=tab`tabpagenr()`
       \ -post-action=jump
       \ -split=vertical -winwidth=50 -direction=topleft 
+      \ -new
       \ -ignored-files=\  <CR>
 "     \ `expand('%:p:h')` isearch=`expand('%:p')`<CR>
 nnoremap <silent><F1> :<C-u>Defx -new `expand('%:p:h')` -search=`expand('%:p')`<CR>
 
-
-
+autocmd BufWritePost * call defx#redraw()
 
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
@@ -71,10 +71,10 @@ nnoremap <silent><buffer><expr> h
 \ defx#do_action('cd', ['..'])
 nnoremap <silent><buffer><expr> ~
 \ defx#do_action('cd')
-nnoremap <silent><buffer><expr> <F2>
-\ defx#do_action('quit')
-nnoremap <silent><buffer><expr> q
-\ defx#do_action('quit')
+nnoremap <silent><buffer> <F2>
+\ :bw <CR>
+nnoremap <silent><buffer> q
+\ :bw <CR>
 nnoremap <silent><buffer><expr> <Space>
 \ defx#do_action('toggle_select') . 'j'
 nnoremap <silent><buffer><expr> *
