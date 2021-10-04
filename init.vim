@@ -39,6 +39,7 @@ call plug#begin('~/.vim/plugged')
 "    Plug 'vim-airline/vim-airline'
 "    Plug 'vim-airline/vim-airline-themes'
     Plug 'hoob3rt/lualine.nvim'
+    Plug 'kdheepak/tabline.nvim'
 "   Plug 'Mofiqul/vscode.nvim'
 
 "    Plug 'kyazdani42/nvim-web-devicons' " for file icons
