@@ -10,12 +10,13 @@ nnoremap <silent><F2> :<C-u>Defx -listed -resume
       \ -buffer-name=tab`tabpagenr()`
       \ -post-action=jump
       \ -split=vertical -winwidth=50 -direction=topleft 
-      \ -new
       \ -ignored-files=\  <CR>
+      \ :call defx#redraw() <CR>
 "     \ `expand('%:p:h')` isearch=`expand('%:p')`<CR>
 nnoremap <silent><F1> :<C-u>Defx -new `expand('%:p:h')` -search=`expand('%:p')`<CR>
 
 autocmd BufWritePost * call defx#redraw()
+
 
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
@@ -32,8 +33,10 @@ nnoremap <silent><buffer><expr> p
 \ defx#do_action('paste')
 nnoremap <silent><buffer><expr> l
 \ defx#is_directory() ?
-\ defx#do_action('open'):
-\ defx#do_action('multi',['drop','quit'])
+\ defx#is_opened_tree() ?
+\ 'j':
+\ defx#do_action('open_tree'):
+\ defx#do_action('multi',['drop'])
 nnoremap <silent><buffer><expr> T
 \ defx#do_action('open', 'tabnew')
 nnoremap <silent><buffer><expr> E
@@ -68,13 +71,13 @@ nnoremap <silent><buffer><expr> .
 nnoremap <silent><buffer><expr> ;
 \ defx#do_action('repeat')
 nnoremap <silent><buffer><expr> h
-\ defx#do_action('cd', ['..'])
+\ defx#do_action('close_tree')
 nnoremap <silent><buffer><expr> ~
 \ defx#do_action('cd')
-nnoremap <silent><buffer> <F2>
-\ :bw <CR>
-nnoremap <silent><buffer> q
-\ :bw <CR>
+nnoremap <silent><buffer><expr> <F2>
+\ defx#do_action('quit')
+nnoremap <silent><buffer><expr> q
+\ defx#do_action('quit')
 nnoremap <silent><buffer><expr> <Space>
 \ defx#do_action('toggle_select') . 'j'
 nnoremap <silent><buffer><expr> *
@@ -89,6 +92,12 @@ nnoremap <silent><buffer><expr> <C-g>
 \ defx#do_action('print')
 nnoremap <silent><buffer><expr> cd
 \ defx#do_action('change_vim_cwd')
+
+nnoremap <silent><buffer><expr> L defx#do_action('resize',
+\ defx#get_context().winwidth + 10)
+nnoremap <silent><buffer><expr> H defx#do_action('resize',
+\ defx#get_context().winwidth - 10)
+
 endfunction
 
 
