@@ -1,6 +1,14 @@
 " ===== init =====
 " set path+=**
 
+" set file encoding
+" ref: https://ppt.cc/PMkV
+set fileencodings=utf8,big5
+set fileencoding=utf8
+" set termencoding=utf8
+" let &termencoding = &encoding
+set encoding=utf-8
+
 " split
 set splitbelow
 set splitright
