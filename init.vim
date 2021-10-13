@@ -58,6 +58,8 @@ call plug#begin('~/.vim/plugged')
     " To activate coc on c++, you must install ccl first
     Plug 'jackguo380/vim-lsp-cxx-highlight'
 
+    " log highlight
+    Plug 'mtdl9/vim-log-highlighting'
     
     Plug 'neovim/nvim-lspconfig'
     Plug 'preservim/tagbar' 
