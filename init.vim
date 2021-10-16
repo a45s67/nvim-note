@@ -36,16 +36,27 @@ nnoremap <C-[> <C-T>
 
 " ===== Plugin =====
 call plug#begin('~/.vim/plugged')
+    " For project
+    Plug 'vhdirk/vim-cmake'
 
+    " For edit
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
     Plug 'tpope/vim-surround'
-    Plug 'tpope/vim-fugitive'
     Plug 'easymotion/vim-easymotion'
+    " For formatting
+    Plug 'rhysd/vim-clang-format'
+
+    " git integrate
+    Plug 'tpope/vim-fugitive'
 
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
 "    Plug 'vim-airline/vim-airline'
 "    Plug 'vim-airline/vim-airline-themes'
+
+    " Status line
     Plug 'hoob3rt/lualine.nvim'
     Plug 'kdheepak/tabline.nvim'
 "   Plug 'Mofiqul/vscode.nvim'
