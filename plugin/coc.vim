@@ -164,3 +164,6 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+" Set stack use of tags
+" https://github.com/neoclide/coc.nvim/issues/1026
+set tagfunc=CocTagFunc
