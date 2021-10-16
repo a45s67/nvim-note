@@ -17,9 +17,11 @@
 " hi link LspCxxHlSymVariable Identifier
 
 hi default MyComment guifg=#57A64A
-hi default VSBlue guifg=#639EFF "#3C8CFF "#569cd6
+hi default VSBlue guifg=#80A0FF "#3C8CFF "#569cd6
 hi default MyGreen guifg=#69EB65 "#5CEFD1 "#40ffff
 hi default MyYellow guifg=#FFFF60 "#DCDCAA
+hi default LightBlue guifg=#9CDCFE
+hi default SmoothPurple guifg=#BEB7FF
 
 hi! default link Type VSBlue 
 hi! default link Function MyYellow 
@@ -81,13 +83,13 @@ hi default link LspCxxHlSymConstructor Function
 hi default link LspCxxHlSymEnumMember LspCxxHlGroupEnumConstant
 
 " Preprocessor
-hi default link LspCxxHlSymMacro Macro
+hi default link LspCxxHlSymMacro SmoothPurple
 
 " Namespace
 hi default link LspCxxHlSymNamespace LspCxxHlGroupNamespace
 
 " Variables
-hi default link LspCxxHlSymVariable Normal
+hi default link LspCxxHlSymVariable LightBlue
 hi default link LspCxxHlSymParameter Normal
 hi default link LspCxxHlSymField LspCxxHlGroupMemberVariable
 
