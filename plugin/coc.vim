@@ -79,7 +79,9 @@ function! s:show_documentation()
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" 2021/10/25: Dont Highlight the symbol when holding the cursor. Because it
+" will be very slow (even hang) in large file with many equal symbols.
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
