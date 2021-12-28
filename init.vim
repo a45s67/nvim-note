@@ -1,6 +1,9 @@
 " ===== init =====
+" :help terminal-emulator
+tnoremap <Esc> <C-\><C-n>
 " set path+=**
 
+set clipboard=unnamedplus
 " set file encoding
 " ref: https://ppt.cc/PMkV
 set fileencodings=utf8,big5
@@ -76,6 +79,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/tagbar' 
 
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
+
     Plug 'junegunn/goyo.vim'
 
 call plug#end()
@@ -104,6 +109,12 @@ nnoremap <F8> :TagbarToggle<CR>
 
 " ======= fzf ======
 nnoremap <F3> :FZF<CR>
+
+" ======= LF =======
+let lfvim = "go/pkg/mod/github.com/gokcehan/lf@v0.0.0-20211009210101-1b71c33afd1a/etc/lf.vim"
+if filereadable(lfvim)
+    exec "source " . lfvim
+endif
 
 " ======= airline ====
 let g:airline#extensions#tabline#enabled = 1
