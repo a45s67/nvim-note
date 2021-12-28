@@ -166,6 +166,13 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+" ============== Below are some special setting ============================
 " Set stack use of tags
 " https://github.com/neoclide/coc.nvim/issues/1026
 set tagfunc=CocTagFunc
+
+" Extension management
+" Discussion of extension and settings backup: https://github.com/neoclide/coc.nvim/issues/560
+" https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#manage-coc-extensions
+let g:coc_global_extensions = [ "coc-highlight", "coc-pyright", "coc-powershell" ]
+
