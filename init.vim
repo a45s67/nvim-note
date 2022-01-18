@@ -43,6 +43,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vhdirk/vim-cmake'
 
     " For edit
+    Plug 'preservim/nerdcommenter'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'tpope/vim-surround'
@@ -71,6 +72,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " To activate coc on c++, you must install ccl first
     Plug 'jackguo380/vim-lsp-cxx-highlight'
+    " Python syntax parser. It would be used in my coc setting
+    Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
+    " Python syntax highlighting
+    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
     " log highlight
     Plug 'mtdl9/vim-log-highlighting'
