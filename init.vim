@@ -43,6 +43,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vhdirk/vim-cmake'
 
     " For edit
+    Plug 'jiangmiao/auto-pairs'
     Plug 'preservim/nerdcommenter'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
@@ -50,6 +51,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'easymotion/vim-easymotion'
     " For formatting
     Plug 'rhysd/vim-clang-format'
+    Plug 'Chiel92/vim-autoformat'
 
     " git integrate
     Plug 'tpope/vim-fugitive'
@@ -138,3 +140,10 @@ hi VertSplit guifg=Blue guibg=NONE gui=NONE
 set pumblend=15 " :h 'pumblend' for more infomation.
 hi PmenuSel blend=0 guibg=#e6db74 guifg=#232526
 hi Pmenu guibg=#465457
+
+" ======== set autopair keybinding at end ==========
+imap <expr> <TAB> Before_first_char_of_line() ? "<TAB>":"<M-n>"
+imap <silent><expr> <TAB>
+      \ pumvisible() ? "<C-n>" :
+      \ Before_first_char_of_line() ?
+      \ "\<TAB>" : "\<M-n>"
