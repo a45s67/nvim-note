@@ -39,6 +39,8 @@ nnoremap <C-[> <C-T>
 
 " ===== Plugin =====
 call plug#begin('~/.vim/plugged')
+    "
+    Plug 'mhinz/vim-startify'
     " For project
     Plug 'vhdirk/vim-cmake'
 
