@@ -3,7 +3,7 @@
         "ccls": {
             "command": "ccls",
             "args": [
-                "-log-file=/tmp/ccls.log",
+                "-log-file=C:\\Users\\Fish\\AppData\\Local\\tmp\\ccls.log",
                 "-v=1"
             ],
             "filetypes": [
@@ -19,9 +19,10 @@
                 ".git/",
                 ".hg/"
             ],
+            "trace.server": "verbose",
             "initializationOptions": {
                 "cache": {
-                    "directory": "/tmp/ccls"
+                    "directory": "C:\\Users\\Fish\\AppData\\Local\\tmp\\ccls"
                 },
                 "highlight": { "lsRanges" : true }
             }
