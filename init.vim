@@ -92,6 +92,9 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'junegunn/goyo.vim'
 
+    " tmux integration
+    Plug 'preservim/vimux'
+
 call plug#end()
 
 
