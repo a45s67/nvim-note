@@ -64,6 +64,26 @@ S[ " Add [] around selected text
 ```
 ##### Coc
 ``` vim
+" insert mode
+<c-j>,<c-k> " to jump around placeholder, when doing auto completion"
+<c-space> " trigger completion of current word
+
+" normal mode
+<leader>rn " symbol rename
+gr " show references
+K " show doc of current symbol/method. Navigate the float window with <c-f>,<c-b>
+<space>o " show outline list (I usually use it as a function/class list navigator)
+<space>a " show diagnostics
+<space>c " show coc commands you can use
+<space>s " show symbol list
+
+" visual/select mode
+if " select inside current funtion block
+af " select all current funtion block
+ic " select inside current class block
+ac " select all current class block
+<leader>a " do CocAction on current select
+
 ```
 ##### defx.nvim
 ``` vim
