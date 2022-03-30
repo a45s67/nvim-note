@@ -3,6 +3,7 @@
 tnoremap <Esc> <C-\><C-n>
 " set path+=**
 
+" set clipboard shared with other nvim process
 set clipboard=unnamedplus
 " set file encoding
 " ref: https://ppt.cc/PMkV
