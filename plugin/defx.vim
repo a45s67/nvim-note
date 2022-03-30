@@ -72,6 +72,8 @@ nnoremap <silent><buffer><expr> ;
 \ defx#do_action('repeat')
 nnoremap <silent><buffer><expr> h
 \ defx#do_action('close_tree')
+nnoremap <silent><buffer><expr> -
+\ defx#do_action('cd', ['..'])
 nnoremap <silent><buffer><expr> ~
 \ defx#do_action('cd')
 nnoremap <silent><buffer><expr> <F2>
