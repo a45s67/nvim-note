@@ -100,7 +100,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'powerman/vim-plugin-AnsiEsc'
 
     " tmux integration
-    Plug 'preservim/vimux'
+    if !has('win64')
+        Plug 'preservim/vimux'
+    endif
 
     " Debugger
     Plug 'puremourning/vimspector'
