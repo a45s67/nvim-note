@@ -99,6 +99,9 @@ call plug#begin('~/.vim/plugged')
     " tmux integration
     Plug 'preservim/vimux'
 
+    " Debugger
+    Plug 'puremourning/vimspector'
+
 call plug#end()
 
 
