@@ -66,6 +66,8 @@ call plug#begin('~/.vim/plugged')
 "    Plug 'vim-airline/vim-airline'
 "    Plug 'vim-airline/vim-airline-themes'
 
+    " Symbol tree
+    Plug 'liuchengxu/vista.vim'
     " Status line
     Plug 'hoob3rt/lualine.nvim'
     Plug 'kdheepak/tabline.nvim'
