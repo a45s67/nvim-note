@@ -96,6 +96,9 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'junegunn/goyo.vim'
 
+    " Ansi terminal color code reslover
+    Plug 'powerman/vim-plugin-AnsiEsc'
+
     " tmux integration
     Plug 'preservim/vimux'
 
