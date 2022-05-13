@@ -22,6 +22,7 @@ nnoremap <A-j> <C-W>j
 nnoremap <A-k> <C-W>k
 nnoremap <A-l> <C-W>l
 nnoremap <A-h> <C-W>h
+nnoremap <space>p <C-W>p
 " tab space
 " https://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim
 "
