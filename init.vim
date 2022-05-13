@@ -44,7 +44,7 @@ call plug#begin('~/.vim/plugged')
     "
     Plug 'mhinz/vim-startify'
     " For project
-    Plug 'vhdirk/vim-cmake'
+    Plug 'ilyachur/cmake4vim'
 
     " For edit
     Plug 'jiangmiao/auto-pairs'
