@@ -93,6 +93,7 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
     Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
+    Plug 'junegunn/vim-easy-align'
 
     Plug 'junegunn/goyo.vim'
 
