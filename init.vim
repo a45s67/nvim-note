@@ -130,7 +130,7 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 nnoremap <F8> :TagbarToggle<CR>
 
 " ======= fzf ======
-nnoremap <F3> :FZF<CR>
+nnoremap <C-p> :FZF<CR>
 
 " ======= LF =======
 let lfvim = "go/pkg/mod/github.com/gokcehan/lf@v0.0.0-20211009210101-1b71c33afd1a/etc/lf.vim"
