@@ -176,3 +176,9 @@ set tagfunc=CocTagFunc
 " https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#manage-coc-extensions
 let g:coc_global_extensions = [ "coc-highlight", "coc-jedi", "coc-powershell", "coc-xml" ]
 
+" Cross platform
+if has('win64')
+    let g:coc_config_home = '~\AppData\Local\nvim\coc-settings\windows'
+else
+    let g:coc_config_home = '~/.config/nvim/coc-settings/linux'
+endif
