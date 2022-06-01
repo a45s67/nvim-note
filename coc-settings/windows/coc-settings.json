@@ -1,31 +1,4 @@
 {
-    "languageserver": {
-        "ccls": {
-            "command": "ccls",
-            "args": [
-                "-log-file=C:\\Users\\Fish\\AppData\\Local\\tmp\\ccls.log",
-                "-v=1"
-            ],
-            "filetypes": [
-                "c",
-                "cpp",
-                "objc",
-                "objcpp"
-            ],
-            "rootPatterns": [
-                ".ccls",
-                "compile_commands.json",
-                ".vim/",
-                ".git/",
-                ".hg/"
-            ],
-            "trace.server": "verbose",
-            "initializationOptions": {
-                "cache": {
-                    "directory": "C:\\Users\\Fish\\AppData\\Local\\tmp\\ccls"
-                },
-                "highlight": { "lsRanges" : true }
-            }
-        }
-    }
+    "clangd.semanticHighlighting": true,
+    "coc.preferences.semanticTokensHighlights": false
 }
