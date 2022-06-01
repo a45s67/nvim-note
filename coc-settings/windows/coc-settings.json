@@ -1,4 +1,3 @@
 {
-    "clangd.semanticHighlighting": true,
-    "coc.preferences.semanticTokensHighlights": false
+    "semanticTokens.filetypes": ["c", "cpp"]
 }
