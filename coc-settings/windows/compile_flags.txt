@@ -1,0 +1,5 @@
+-xc++
+-std=c++17
+-IC:\Users\Fish\github\vcpkg\installed\x64-windows-static\include
+-IC:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\atlmfc\include
+-IC:\Users\Fish\projects\HC-Agent-Windows\working\tests\unit-test\packages\gmock.1.10.0\lib\native\include
