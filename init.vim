@@ -78,6 +78,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'kristijanhusak/defx-git'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     " To activate coc on c++, you must install ccl first
     
     " I turned to clangd now which uses the new semantic token protocal the
