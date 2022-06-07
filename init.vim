@@ -4,7 +4,7 @@ tnoremap <Esc> <C-\><C-n>
 " set path+=**
 
 " set clipboard shared with other nvim process
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 " set file encoding
 " ref: https://ppt.cc/PMkV
 set fileencodings=utf8,big5
@@ -42,7 +42,7 @@ nnoremap <C-[> <C-T>
 " ===== Plugin =====
 call plug#begin('~/.vim/plugged')
     "
-    Plug 'mhinz/vim-startify'
+    " Plug 'mhinz/vim-startify'
     " For project
     Plug 'ilyachur/cmake4vim'
 
