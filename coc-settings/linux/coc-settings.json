@@ -1,30 +1,7 @@
 {
-    "languageserver": {
-        "ccls": {
-            "command": "ccls",
-            "args": [
-                "-log-file=/tmp/ccls.log",
-                "-v=1"
-            ],
-            "filetypes": [
-                "c",
-                "cpp",
-                "objc",
-                "objcpp"
-            ],
-            "rootPatterns": [
-                ".ccls",
-                "compile_commands.json",
-                ".vim/",
-                ".git/",
-                ".hg/"
-            ],
-            "initializationOptions": {
-                "cache": {
-                    "directory": "/tmp/ccls"
-                },
-                "highlight": { "lsRanges" : true }
-            }
-        }
-    }
+    // Because of coc-clangd has supported semantic tokens now. semanticHighlighting has been removed.
+    // So if we want to use clangd-13 which only supports semantic token protocal, we have to set semanticTokens.filetypes.
+    // https://github.com/clangd/coc-clangd/issues/297
+    // https://github.com/jackguo380/vim-lsp-cxx-highlight/issues/74#issuecomment-1088917287
+    "semanticTokens.filetypes": ["c", "cpp"]
 }

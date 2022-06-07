@@ -78,12 +78,27 @@ call plug#begin('~/.vim/plugged')
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'kristijanhusak/defx-git'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " For c++ syntax highlighting
+    " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    " To check current color group
+    " Plug 'nvim-treesitter/playground'
     " To activate coc on c++, you must install ccl first
-    Plug 'jackguo380/vim-lsp-cxx-highlight'
+    
+    " I turned to clangd now which uses the new semantic token protocal the
+    " plugin is not supporting. So I turned it off. 
+    " Plug 'jackguo380/vim-lsp-cxx-highlight'
     " Python syntax parser. It would be used in my coc setting
     Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
     " Python syntax highlighting
     Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+
+    " Global syntax highlighting
+    Plug 'ray-x/aurora'
+    Plug 'yashguptaz/calvera-dark.nvim'
+    Plug 'savq/melange'
+    Plug 'marko-cerovac/material.nvim'
+    Plug 'rebelot/kanagawa.nvim'
+    Plug 'fenetikm/falcon'
 
     " log highlight
     Plug 'mtdl9/vim-log-highlighting'
@@ -110,6 +125,10 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
+
+" Color scheme
+colorscheme kanagawa
+hi Normal guibg=NONE ctermbg=NONE
 
 " ======= easy motion ======
 " <Leader>f{char} to move to {char}
