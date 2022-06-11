@@ -99,6 +99,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'marko-cerovac/material.nvim'
     Plug 'rebelot/kanagawa.nvim'
     Plug 'fenetikm/falcon'
+    Plug 'rktjmp/lush.nvim'
+    Plug 'mcchrish/zenbones.nvim'
+    Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
+    Plug 'rose-pine/neovim'
+    Plug 'jnurmine/Zenburn'
+    Plug 'junegunn/seoul256.vim'
 
     " log highlight
     Plug 'mtdl9/vim-log-highlighting'
@@ -127,7 +133,9 @@ call plug#end()
 
 
 " Color scheme
-colorscheme kanagawa
+let rand_schemes = ['seoul256', 'calvera', 'melange', 'material', 'zenburn']
+let scheme = rand_schemes[rand() % (len(rand_schemes) - 1 ) ] 
+exec 'colorscheme' rand_schemes[rand() % (len(rand_schemes) - 1 ) ] 
 hi Normal guibg=NONE ctermbg=NONE
 
 " ======= easy motion ======
