@@ -1,6 +1,11 @@
 # nvim-note
 
 ### Cheat sheet
+#### Redirect output to buffer
+```
+:r !ls
+```
+- Reference: [Capture ex command output](https://vim.fandom.com/wiki/Capture_ex_command_output#:~:text=You%20can%20use%20the%20%3Aredir,register%20into%20a%20Vim%20buffer.&text=Now%2C%20register%20'a'%20will,Vim%20buffer%2C%20using%20%22ap%20.), [Pipe output of shell command (!) into a new buffer in Vim](https://superuser.com/questions/157987/pipe-output-of-shell-command-into-a-new-buffer-in-vim)
 #### Navigate
 - General
   - [ref of `.](https://vi.stackexchange.com/questions/2001/how-do-i-jump-to-the-location-of-my-last-edit)
