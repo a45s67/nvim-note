@@ -177,10 +177,3 @@ hi VertSplit guifg=Blue guibg=NONE gui=NONE
 set pumblend=15 " :h 'pumblend' for more infomation.
 hi PmenuSel blend=0 guibg=#e6db74 guifg=#232526
 hi Pmenu guibg=#465457
-
-" ======== set autopair keybinding at end ==========
-imap <expr> <TAB> Before_first_char_of_line() ? "<TAB>":"<M-n>"
-imap <silent><expr> <TAB>
-      \ pumvisible() ? "<C-n>" :
-      \ Before_first_char_of_line() ?
-      \ "\<TAB>" : "\<M-n>"
