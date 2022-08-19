@@ -136,9 +136,9 @@ call plug#end()
 
 " Color scheme
 " https://vi.stackexchange.com/questions/807/how-to-generate-random-numbers
-let g:seed = srand()
-let rand_schemes = ['seoul256', 'calvera', 'melange', 'rose-pine']
-let scheme = rand_schemes[rand(g:seed) % (len(rand_schemes) ) ] 
+let seed = srand()
+let rand_schemes = ['seoul256', 'melange']
+let scheme = rand_schemes[rand(seed) % (len(rand_schemes) ) ] 
 exec 'colorscheme' scheme 
 hi Normal guibg=NONE ctermbg=NONE
 
