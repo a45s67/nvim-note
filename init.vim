@@ -92,13 +92,21 @@ call plug#begin('~/.vim/plugged')
     " Python syntax highlighting
     Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
-    " Global syntax highlighting
-    Plug 'ray-x/aurora'
-    Plug 'yashguptaz/calvera-dark.nvim'
+    " Color themes
+    " Plug 'ray-x/aurora'
     Plug 'savq/melange'
-    Plug 'marko-cerovac/material.nvim'
-    Plug 'rebelot/kanagawa.nvim'
-    Plug 'fenetikm/falcon'
+    Plug 'yashguptaz/calvera-dark.nvim'
+    Plug 'junegunn/seoul256.vim'
+    Plug 'jnurmine/Zenburn'
+    Plug 'rose-pine/neovim'
+    " Plug 'rktjmp/lush.nvim'
+    " Plug 'mcchrish/zenbones.nvim'
+    " Plug 'rebelot/kanagawa.nvim'
+    " Plug 'fenetikm/falcon'
+    " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    " Plug 'marko-cerovac/material.nvim'
+    " Plug 'RRethy/nvim-base16'
+    " Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 
     " log highlight
     Plug 'mtdl9/vim-log-highlighting'
@@ -127,7 +135,11 @@ call plug#end()
 
 
 " Color scheme
-colorscheme kanagawa
+" https://vi.stackexchange.com/questions/807/how-to-generate-random-numbers
+let g:seed = srand()
+let rand_schemes = ['seoul256', 'calvera', 'melange', 'rose-pine']
+let scheme = rand_schemes[rand(g:seed) % (len(rand_schemes) ) ] 
+exec 'colorscheme' scheme 
 hi Normal guibg=NONE ctermbg=NONE
 
 " ======= easy motion ======
