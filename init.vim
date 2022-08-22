@@ -136,9 +136,9 @@ call plug#end()
 
 " Color scheme
 " https://vi.stackexchange.com/questions/807/how-to-generate-random-numbers
-let g:seed = srand()
-let rand_schemes = ['seoul256', 'calvera', 'melange', 'rose-pine']
-let scheme = rand_schemes[rand(g:seed) % (len(rand_schemes) ) ] 
+let seed = srand()
+let rand_schemes = ['seoul256', 'melange']
+let scheme = rand_schemes[rand(seed) % (len(rand_schemes) ) ] 
 exec 'colorscheme' scheme 
 hi Normal guibg=NONE ctermbg=NONE
 
@@ -189,10 +189,3 @@ hi VertSplit guifg=Blue guibg=NONE gui=NONE
 set pumblend=15 " :h 'pumblend' for more infomation.
 hi PmenuSel blend=0 guibg=#e6db74 guifg=#232526
 hi Pmenu guibg=#465457
-
-" ======== set autopair keybinding at end ==========
-imap <expr> <TAB> Before_first_char_of_line() ? "<TAB>":"<M-n>"
-imap <silent><expr> <TAB>
-      \ pumvisible() ? "<C-n>" :
-      \ Before_first_char_of_line() ?
-      \ "\<TAB>" : "\<M-n>"

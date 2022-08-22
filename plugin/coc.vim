@@ -33,21 +33,46 @@ endif
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 
-" imap <silent><expr> <TAB>
-"       \ pumvisible() ? "<C-n>" : "<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:before_first_char_of_line()
+    " https://devhints.io/vimscript-functions
+    " https://vi.stackexchange.com/questions/6265/usage-of-the-operator
+    let cur_mode = mode()
+    if cur_mode == 'n'
+        let pos_repair = 1
+    else
+        let pos_repair = 2
+    endif
+
+    let cursorpos = col('.') - pos_repair
+    if cursorpos < 0
+        " Cursor is at the head of line
+        return 1
+    endif
+    let str_before_and_at_cursor = getline('.')[:cursorpos]
+    return str_before_and_at_cursor =~ '^\s*$'
+endfunction
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+imap <silent><expr> <TAB>
+    \ coc#pum#visible() ? coc#pum#next(1):
+    \ <SID>before_first_char_of_line() ? "\<Tab>" :
+    \ "<M-n>"
+" <M-b> is AutoPairsShortcutJump key of auto pair plugin
+
+" inoremap <silent><expr> <Esc>
+"     \ coc#pum#visible() ? coc#pum#cancel() : "\<Esc>"
+" This setting is not as handy as I expected.
+    
+
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <c-space> coc#refresh()
+
+hi CocSearch ctermfg=12 guifg=#18A3FF
+hi CocMenuSel ctermbg=109 guibg=#13354A
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin

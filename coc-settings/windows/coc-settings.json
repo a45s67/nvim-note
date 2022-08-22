@@ -1,3 +1,4 @@
 {
-    "semanticTokens.filetypes": ["c", "cpp"]
+    "semanticTokens.filetypes": ["c", "cpp"],
+    "clangd.arguments":["-header-insertion=never"]
 }
