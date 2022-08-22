@@ -54,8 +54,8 @@ imap <silent><expr> <TAB>
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" hi CocSearch ctermfg=12 guifg=#18A3FF
-" hi CocMenuSel ctermbg=109 guibg=#13354A
+hi CocSearch guifg=#FB93A1 guibg=#6B1F2C
+hi CocMenuSel guibg=#6B1F2C
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
