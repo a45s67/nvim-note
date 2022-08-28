@@ -90,6 +90,8 @@ call plug#begin('~/.vim/plugged')
     " Python syntax parser. It would be used in my coc setting
     Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
     " Python syntax highlighting
+    " NOTE: The :UpdateRemotePlugins might not work properly in vim-plug
+    " posthook, see https://github.com/gelguy/wilder.nvim/issues/109
     Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
     " Color themes
