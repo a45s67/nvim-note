@@ -3,6 +3,9 @@
 tnoremap <Esc> <C-\><C-n>
 " set path+=**
 
+" Show TAB with 8 space: https://stackoverflow.com/a/234578/12764484
+set tabstop=8
+
 " set clipboard shared with other nvim process
 " set clipboard=unnamedplus
 " set file encoding
