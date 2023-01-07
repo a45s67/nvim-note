@@ -1,0 +1,2 @@
+
+nnoremap B :Buffers<CR>

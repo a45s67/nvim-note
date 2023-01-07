@@ -3,5 +3,7 @@
     // So if we want to use clangd-13 which only supports semantic token protocal, we have to set semanticTokens.filetypes.
     // https://github.com/clangd/coc-clangd/issues/297
     // https://github.com/jackguo380/vim-lsp-cxx-highlight/issues/74#issuecomment-1088917287
-    "semanticTokens.filetypes": ["c", "cpp"]
+    "semanticTokens.filetypes": ["c", "cpp"],
+    "clangd.arguments":["-header-insertion=never"],
+    "colors.filetypes": ["*"]
 }

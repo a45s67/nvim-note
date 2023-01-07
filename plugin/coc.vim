@@ -1,57 +1,67 @@
-" Set internal encoding of vim, not needed on neovim, since coc.nvim using some
-" unicode characters in the file autoload/float.vim
-" set encoding=utf-8
-
-" TextEdit might fail if hidden is not set.
-set hidden
-
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
-
-" Give more space for displaying messages.
-set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
 
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
 " Always show the signcolumn, otherwise it would shift the text each time
-"
 " diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
+set signcolumn=yes
+
+
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 
-" imap <silent><expr> <TAB>
-"       \ pumvisible() ? "<C-n>" : "<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:before_first_char_of_line()
+    " https://devhints.io/vimscript-functions
+    " https://vi.stackexchange.com/questions/6265/usage-of-the-operator
+    let cur_mode = mode()
+    if cur_mode == 'n'
+        let pos_repair = 1
+    else
+        let pos_repair = 2
+    endif
+
+    let cursorpos = col('.') - pos_repair
+    if cursorpos < 0
+        " Cursor is at the head of line
+        return 1
+    endif
+    let str_before_and_at_cursor = getline('.')[:cursorpos]
+    return str_before_and_at_cursor =~ '^\s*$'
+endfunction
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+imap <silent><expr> <TAB>
+    \ coc#pum#visible() ? coc#pum#next(1):
+    \ <SID>before_first_char_of_line() ? "\<Tab>" :
+    \ "<M-n>"
+" <M-b> is AutoPairsShortcutJump key of auto pair plugin
+
+" inoremap <silent><expr> <Esc>
+"     \ coc#pum#visible() ? coc#pum#cancel() : "\<Esc>"
+" This setting is not as handy as I expected.
+    
+
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <c-space> coc#refresh()
+
+hi CocSearch guifg=#FB93A1 guibg=#6B1F2C
+hi CocMenuSel guibg=#6B1F2C
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+" " Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
@@ -78,10 +88,8 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Highlight the symbol and its references when holding the cursor.
-" 2021/10/25: Dont Highlight the symbol when holding the cursor. Because it
-" will be very slow (even hang) in large file with many equal symbols.
-" autocmd CursorHold * silent call CocActionAsync('highlight')
+" WARN: Highlight will be very slow (even hang) in large file with many equal symbols.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)

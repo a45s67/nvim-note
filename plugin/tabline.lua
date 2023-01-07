@@ -34,3 +34,9 @@ require'lualine'.setup {
     lualine_z = {},
   },
 }
+
+vim.api.nvim_set_keymap('n', '<space>tn', ':<C-u>tabnew<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<space>tr', ':<C-u>TablineTabRename ', { noremap = true })
+vim.api.nvim_set_keymap('n', '<space>bb', ':<C-u>TablineBuffersBind ', { noremap = true })
+vim.api.nvim_set_keymap('n', 'gn', ':<C-u>TablineBufferNext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'gb', ':<C-u>TablineBufferPrevious<CR>', { noremap = true, silent = true })
