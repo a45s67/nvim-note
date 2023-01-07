@@ -182,7 +182,7 @@ set tagfunc=CocTagFunc
 " Extension management
 " Discussion of extension and settings backup: https://github.com/neoclide/coc.nvim/issues/560
 " https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#manage-coc-extensions
-let g:coc_global_extensions = [ "coc-highlight", "coc-jedi", "coc-powershell", "coc-xml", "coc-clangd" ]
+let g:coc_global_extensions = [ "coc-highlight", "coc-jedi", "coc-powershell", "coc-xml" ]
 
 " Cross platform
 if has('win64')
