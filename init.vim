@@ -116,7 +116,12 @@ call plug#begin('~/.vim/plugged')
     " log highlight
     Plug 'mtdl9/vim-log-highlighting'
     
+    " lsp
     Plug 'neovim/nvim-lspconfig'
+    Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+    Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+    Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+
     Plug 'preservim/tagbar' 
 
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
