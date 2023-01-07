@@ -55,7 +55,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'tpope/vim-surround'
-    Plug 'easymotion/vim-easymotion'
+    Plug 'phaazon/hop.nvim'
     " For formatting
     Plug 'rhysd/vim-clang-format'
     Plug 'Chiel92/vim-autoformat'
