@@ -11,9 +11,6 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 local on_attach = function(client, bufnr)
   -- Disable coc to prevent collision
   vim.api.nvim_command('CocDisable')
-  -- Start the auto complete plugin
-  coq.Now("--shut-up")
-
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }

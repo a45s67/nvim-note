@@ -118,9 +118,13 @@ call plug#begin('~/.vim/plugged')
     
     " lsp
     Plug 'neovim/nvim-lspconfig'
-    Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-    Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-    Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
     Plug 'preservim/tagbar' 
 
