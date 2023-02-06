@@ -41,6 +41,19 @@ local lsp_flags = {
 require('lspconfig')['clangd'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    cmd = {
+        -- Source: https://www.reddit.com/r/neovim/comments/pxd2og/comment/heofie3/?utm_source=share&utm_medium=web2x&context=3
+        -- see clangd --help-hidden
+        "clangd-15",
+        "--background-index",
+        -- by default, clang-tidy use -checks=clang-diagnostic-*,clang-analyzer-*
+        -- to add more checks, create .clang-tidy file in the root directory
+        -- and add Checks key, see https://clang.llvm.org/extra/clang-tidy/
+        "--clang-tidy",
+        "--completion-style=bundled",
+        "--cross-file-rename",
+        "--header-insertion=iwyu",
+    },
 }
 
 require('lspconfig')['gopls'].setup{
