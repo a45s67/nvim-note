@@ -81,10 +81,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'kristijanhusak/defx-git'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " For c++ syntax highlighting
-    " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    " To check current color group
-    " Plug 'nvim-treesitter/playground'
     " To activate coc on c++, you must install ccl first
     
     " I turned to clangd now which uses the new semantic token protocal the
@@ -124,6 +120,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+    " treesitter
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'Badhi/nvim-treesitter-cpp-tools', {'for': ['cpp']}
+    " To check current color group
+    " Plug 'nvim-treesitter/playground'
 
     Plug 'preservim/tagbar' 
 
