@@ -136,6 +136,9 @@ call plug#begin('~/.vim/plugged')
     " Debugger
     Plug 'puremourning/vimspector'
 
+    " Git Util
+    Plug 'APZelos/blamer.nvim'
+
 call plug#end()
 
 
