@@ -59,3 +59,6 @@ require('lspconfig')['clangd'].setup{
 require('lspconfig')['gopls'].setup{
     on_attach = on_attach,
 }
+require('lspconfig')['pylyzer'].setup{
+    on_attach = on_attach,
+}
