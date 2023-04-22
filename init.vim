@@ -3,9 +3,6 @@
 tnoremap <Esc> <C-\><C-n>
 " set path+=**
 
-" Show TAB with 8 space: https://stackoverflow.com/a/234578/12764484
-set tabstop=8
-
 " set clipboard shared with other nvim process
 " set clipboard=unnamedplus
 " set file encoding
@@ -29,13 +26,13 @@ nnoremap <space>p <C-W>p
 " tab space
 " https://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim
 "
-    filetype plugin indent on
-    " show existing tab with 4 spaces width
-    set tabstop=4
-    " when indenting with '>', use 4 spaces width
-    set shiftwidth=4
-    " On pressing tab, insert 4 spaces
-    set expandtab
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=8
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 
 
 
