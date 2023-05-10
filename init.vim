@@ -13,6 +13,10 @@ set fileencoding=utf8
 " let &termencoding = &encoding
 set encoding=utf-8
 
+" https://kaiwern.com/posts/2022/04/28/writing-a-custom-vim-command/
+" https://unix.stackexchange.com/questions/608452/how-do-i-properly-convert-the-file-to-utf-16le-encoding-without-strange-characte
+command SetUtf16Encoding e ++enc=utf-16le
+
 " split
 set splitbelow
 set splitright
