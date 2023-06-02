@@ -39,13 +39,20 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
+local clangd_bin = 'clangd'
+if vim.fn.executable('clangd') == 1 then
+  clangd_bin = 'clangd'
+else
+  clangd_bin = 'clangd-17'
+end
+
 require('lspconfig')['clangd'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
     cmd = {
         -- Source: https://www.reddit.com/r/neovim/comments/pxd2og/comment/heofie3/?utm_source=share&utm_medium=web2x&context=3
         -- see clangd --help-hidden
-        "clangd-15",
+        clangd_bin,
         "--background-index",
         -- by default, clang-tidy use -checks=clang-diagnostic-*,clang-analyzer-*
         -- to add more checks, create .clang-tidy file in the root directory
