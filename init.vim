@@ -148,6 +148,11 @@ call plug#begin('~/.vim/plugged')
 
     " Git Util
     Plug 'APZelos/blamer.nvim'
+    Plug 'pwntester/octo.nvim'
+    " Dependencies of octo.nvim
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-tree/nvim-web-devicons'
 
 call plug#end()
 
