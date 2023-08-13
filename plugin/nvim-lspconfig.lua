@@ -9,8 +9,10 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  -- Disable coc to prevent collision
+  -- Disable coc to prevent collision, and revert the tagfunc setting.
   vim.api.nvim_command('CocDisable')
+  vim.api.nvim_buf_set_option(tagfunc, vim.lsp.tagfunc)
+
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
@@ -34,6 +36,8 @@ local on_attach = function(client, bufnr)
   vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 end
 
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
@@ -47,6 +51,7 @@ else
 end
 
 require('lspconfig')['clangd'].setup{
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
     cmd = {
