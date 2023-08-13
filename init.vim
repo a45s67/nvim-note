@@ -212,6 +212,6 @@ hi VertSplit guifg=Blue guibg=NONE gui=NONE
 " ======== popup =====
 " https://vi.stackexchange.com/questions/23328/change-color-of-coc-suggestion-box
 " https://vi.stackexchange.com/questions/12664/is-there-any-way-to-change-the-popup-menu-color
-set pumblend=15 " :h 'pumblend' for more infomation.
-hi PmenuSel blend=0 guibg=#e6db74 guifg=#232526
-hi Pmenu guibg=#465457
+" set pumblend=5 " :h 'pumblend' for more infomation.
+hi PmenuSel guibg=#e6db74 guifg=#232526
+hi Pmenu guibg=NONE

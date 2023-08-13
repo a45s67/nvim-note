@@ -8,6 +8,7 @@ cmp.setup {
     },
     window = {
         documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
