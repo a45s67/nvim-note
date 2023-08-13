@@ -6,6 +6,9 @@ cmp.setup {
             vim.fn["UltiSnips#Anon"](args.body)
         end,
     },
+    experimental = {
+        ghost_text = true,
+    },
     window = {
         documentation = cmp.config.window.bordered(),
         completion = cmp.config.window.bordered(),
@@ -38,6 +41,7 @@ cmp.setup {
         { name = 'ultisnips' },
         { name = 'path' },
         { name = 'nvim_lsp_signature_help' },
+        { name = 'nvim_lsp_document_symbol' },
     }, {
         {name = 'buffer' },
     })
