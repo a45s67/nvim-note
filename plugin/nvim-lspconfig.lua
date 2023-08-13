@@ -9,16 +9,17 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-    vim.notify("Starting LSP")
+    local notifier = vim.notify("Try to attach LSP to this buffer...")
     -- Disable coc to prevent collision, and revert the tagfunc setting.
     if (vim.g.coc_enabled == 1) then
-        -- vim.api.nvim_command('CocDisable')
+        notifier = vim.notify("Try to attach LSP to this buffer...Disabling Coc", "warn", {replace = notifier})
+        vim.api.nvim_command('CocDisable')
         vim.api.nvim_buf_set_option(bufnr, "tagfunc", "v:lua.vim.lsp.tagfunc")
-        vim.notify("Disable coc")
     end
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
+    notifier = vim.notify("Try to attach LSP to this buffer...Setting keymaps", "warn", {replace = notifier})
     local bufopts = { noremap=true, silent=true, buffer=bufnr }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
@@ -38,7 +39,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
     vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-    vim.notify("LSP started")
+    vim.notify("Try to attach LSP to this buffer...Successed!", "info", {replace = notifier})
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
