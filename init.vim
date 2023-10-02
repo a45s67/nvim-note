@@ -159,7 +159,10 @@ call plug#begin('~/.vim/plugged')
     " Fancy UI
     Plug 'rcarriga/nvim-notify'
 
-call plug#end()
+    " package manager
+    Plug 'williamboman/mason.nvim'
+    Plug 'williamboman/mason-lspconfig.nvim'
+    call plug#end()
 
 
 " Color scheme

@@ -1,3 +1,8 @@
+require("mason").setup()
+require("mason-lspconfig").setup {
+    ensure_installed = { "biome"},
+}
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -79,5 +84,8 @@ require('lspconfig')['gopls'].setup{
     on_attach = on_attach,
 }
 require('lspconfig')['pylyzer'].setup{
+    on_attach = on_attach,
+}
+require('lspconfig')['biome'].setup{
     on_attach = on_attach,
 }
