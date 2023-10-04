@@ -81,11 +81,14 @@ require('lspconfig')['clangd'].setup{
 }
 
 require('lspconfig')['gopls'].setup{
+    capabilities = capabilities,
     on_attach = on_attach,
 }
 require('lspconfig')['pylyzer'].setup{
+    capabilities = capabilities,
     on_attach = on_attach,
 }
 require('lspconfig')['biome'].setup{
-    on_attach = on_attach,
+    capabilities = capabilities,
+    on_attach = on_attach
 }
