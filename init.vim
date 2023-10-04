@@ -3,9 +3,6 @@
 tnoremap <Esc> <C-\><C-n>
 " set path+=**
 
-" Show TAB with 8 space: https://stackoverflow.com/a/234578/12764484
-set tabstop=8
-
 " set clipboard shared with other nvim process
 " set clipboard=unnamedplus
 " set file encoding
@@ -15,6 +12,10 @@ set fileencoding=utf8
 " set termencoding=utf8
 " let &termencoding = &encoding
 set encoding=utf-8
+
+" https://kaiwern.com/posts/2022/04/28/writing-a-custom-vim-command/
+" https://unix.stackexchange.com/questions/608452/how-do-i-properly-convert-the-file-to-utf-16le-encoding-without-strange-characte
+command SetUtf16Encoding e ++enc=utf-16le
 
 " split
 set splitbelow
@@ -29,13 +30,13 @@ nnoremap <space>p <C-W>p
 " tab space
 " https://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim
 "
-    filetype plugin indent on
-    " show existing tab with 4 spaces width
-    set tabstop=4
-    " when indenting with '>', use 4 spaces width
-    set shiftwidth=4
-    " On pressing tab, insert 4 spaces
-    set expandtab
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=8
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 
 
 
@@ -115,6 +116,8 @@ call plug#begin('~/.vim/plugged')
     " lsp
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
+    Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/cmp-cmdline'
@@ -145,7 +148,21 @@ call plug#begin('~/.vim/plugged')
     " Debugger
     Plug 'puremourning/vimspector'
 
-call plug#end()
+    " Git Util
+    Plug 'APZelos/blamer.nvim'
+    Plug 'pwntester/octo.nvim'
+    " Dependencies of octo.nvim
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-tree/nvim-web-devicons'
+
+    " Fancy UI
+    Plug 'rcarriga/nvim-notify'
+
+    " package manager
+    Plug 'williamboman/mason.nvim'
+    Plug 'williamboman/mason-lspconfig.nvim'
+    call plug#end()
 
 
 " Color scheme
@@ -200,6 +217,6 @@ hi VertSplit guifg=Blue guibg=NONE gui=NONE
 " ======== popup =====
 " https://vi.stackexchange.com/questions/23328/change-color-of-coc-suggestion-box
 " https://vi.stackexchange.com/questions/12664/is-there-any-way-to-change-the-popup-menu-color
-set pumblend=15 " :h 'pumblend' for more infomation.
-hi PmenuSel blend=0 guibg=#e6db74 guifg=#232526
-hi Pmenu guibg=#465457
+" set pumblend=5 " :h 'pumblend' for more infomation.
+hi PmenuSel guibg=#e6db74 guifg=#232526
+hi Pmenu guibg=NONE

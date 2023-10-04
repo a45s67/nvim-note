@@ -1,8 +1,10 @@
 " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
 " - https://github.com/Valloric/YouCompleteMe
 " - https://github.com/nvim-lua/completion-nvim
-let g:UltiSnipsExpandTrigger="`l"
-let g:UltiSnipsJumpForwardTrigger="`l"
+" These keymaps would also apply to nvim-cmp.
+" https://www.reddit.com/r/neovim/comments/qu8abo/going_to_next_function_parameter_with_nvimcmp/
+let g:UltiSnipsExpandTrigger="<C-k>"
+let g:UltiSnipsJumpForwardTrigger="<C-l>"
 let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 
 " If you want :UltiSnipsEdit to split your window.
