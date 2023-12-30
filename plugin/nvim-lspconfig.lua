@@ -84,11 +84,24 @@ require('lspconfig')['gopls'].setup{
     capabilities = capabilities,
     on_attach = on_attach,
 }
-require('lspconfig')['pylyzer'].setup{
-    capabilities = capabilities,
-    on_attach = on_attach,
-}
 require('lspconfig')['biome'].setup{
     capabilities = capabilities,
     on_attach = on_attach
+}
+require('lspconfig')['solargraph'].setup{
+    on_attach = on_attach,
+}
+require'lspconfig'.pylsp.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = {
+        pylsp = {
+            plugins = {
+            pycodestyle = {
+                ignore = {'W391'},
+                maxLineLength = 100
+                }
+            }
+        }
+    }
 }
