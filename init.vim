@@ -217,3 +217,6 @@ hi VertSplit guifg=Blue guibg=NONE gui=NONE
 " set pumblend=5 " :h 'pumblend' for more infomation.
 hi PmenuSel guibg=#e6db74 guifg=#232526
 hi Pmenu guibg=NONE
+
+" ======== some lua plugin settings ==========
+lua require("config.lsp")

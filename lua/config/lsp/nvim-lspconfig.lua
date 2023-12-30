@@ -1,8 +1,3 @@
-require("mason").setup()
-require("mason-lspconfig").setup {
-    ensure_installed = { "biome"},
-}
-
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -47,7 +42,7 @@ local on_attach = function(client, bufnr)
     vim.notify("Try to attach LSP to this buffer...Successed!", "info", {replace = notifier})
 end
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = require("config.lsp.nvim-cmp").default_capabilities()
 
 local lsp_flags = {
     -- This is the default in Nvim 0.7+

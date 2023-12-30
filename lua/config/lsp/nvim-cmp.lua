@@ -47,7 +47,6 @@ cmp.setup {
     })
 }
 
-
 cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
@@ -64,3 +63,4 @@ cmp.setup.cmdline(':', {
     })
 })
 
+return require("cmp_nvim_lsp")
