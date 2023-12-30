@@ -220,3 +220,4 @@ hi Pmenu guibg=NONE
 
 " ======== some lua plugin settings ==========
 lua require("config.lsp")
+lua require("config.treesitter")
