@@ -81,14 +81,11 @@ call plug#begin('~/.vim/plugged')
 "    Plug 'kyazdani42/nvim-tree.lua'
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'kristijanhusak/defx-git'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " To activate coc on c++, you must install ccl first
     
     " I turned to clangd now which uses the new semantic token protocal the
     " plugin is not supporting. So I turned it off. 
     " Plug 'jackguo380/vim-lsp-cxx-highlight'
-    " Python syntax parser. It would be used in my coc setting
-    Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
+ 
     " Python syntax highlighting
     " NOTE: The :UpdateRemotePlugins might not work properly in vim-plug
     " posthook, see https://github.com/gelguy/wilder.nvim/issues/109
