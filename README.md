@@ -99,6 +99,7 @@ ac " select all current class block
 #### Settings Check
 ``` vim
 :checkhealth " Check if the env for nvim is set properly. E.g. node version, python version.
+:checkhealth nvim-treesitter " Check the treesitter health. If you encounter some problems about treesittter, this will be useful.
 :verbose map <key> " Show the mapping of this key and where its latest setting location.
 :hi <Target>" Show one or all color highlighting settings. Like ":hi Pmenu".
 ```
@@ -160,10 +161,14 @@ echo "hello!"
 endfunction
 ```
 
-
 - Reference
   - [usr_41.txt - 适用于 Vim 8.2 版本](https://yianwillis.github.io/vimcdoc/doc/usr_41.html)
 
+------
+## lua
+- Please refer to nvim-lua-guide
+    - [nvim-lua-guide](https://github.com/nanotee/nvim-lua-guide?tab=readme-ov-file)
+    - [nvim-lua-guide-zh](https://github.com/glepnir/nvim-lua-guide-zh)
 ------
 ## Problems
 - Why Ctrl-V not enter visual mode?
