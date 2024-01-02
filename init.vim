@@ -81,6 +81,7 @@ call plug#begin('~/.vim/plugged')
 "    Plug 'kyazdani42/nvim-tree.lua'
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'kristijanhusak/defx-git'
+    Plug 'stevearc/oil.nvim'
     
     " I turned to clangd now which uses the new semantic token protocal the
     " plugin is not supporting. So I turned it off. 
@@ -133,6 +134,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/vim-easy-align'
 
     Plug 'junegunn/goyo.vim'
+
+    " latex support
+    Plug 'lervag/vimtex'
 
     " Ansi terminal color code reslover
     Plug 'powerman/vim-plugin-AnsiEsc'
