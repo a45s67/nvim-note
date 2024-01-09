@@ -159,6 +159,7 @@ call plug#begin('~/.vim/plugged')
 
     " Fancy UI
     Plug 'rcarriga/nvim-notify'
+    Plug 'kevinhwang91/nvim-bqf'
 
     " package manager
     Plug 'williamboman/mason.nvim'
