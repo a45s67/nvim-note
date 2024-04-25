@@ -86,18 +86,30 @@ require('lspconfig')['biome'].setup{
 require('lspconfig')['solargraph'].setup{
     on_attach = on_attach,
 }
-require'lspconfig'.pylsp.setup{
+
+require('lspconfig')['ruff_lsp'].setup{
+    on_attach = on_attach,
+    init_options = {
+        settings = {
+            -- Any extra CLI arguments for `ruff` go here.
+            args = {},
+        }
+    }
+}
+require('lspconfig')['pyright'].setup{
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
-        pylsp = {
-            plugins = {
-            pycodestyle = {
-                ignore = {'W391'},
-                maxLineLength = 100
-                }
-            }
-        }
+        -- [How to use ruff-lsp along with pyright in Neovim · Issue #384 · astral-sh/ruff-lsp](https://github.com/astral-sh/ruff-lsp/issues/384)
+        pyright = {
+            disableOrganizeImports = true, -- Using Ruff
+        },
+        python = {
+            analysis = {
+                ignore = { '*' }, -- Using Ruff
+                typeCheckingMode = 'off', -- Using mypy
+            },
+        },
     }
 }
 require'lspconfig'.marksman.setup{
