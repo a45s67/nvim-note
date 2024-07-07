@@ -83,9 +83,6 @@ require('lspconfig')['biome'].setup{
     capabilities = capabilities,
     on_attach = on_attach
 }
-require('lspconfig')['solargraph'].setup{
-    on_attach = on_attach,
-}
 
 require('lspconfig')['ruff_lsp'].setup{
     on_attach = on_attach,
@@ -114,5 +111,13 @@ require('lspconfig')['pyright'].setup{
 }
 require'lspconfig'.marksman.setup{
     capabilities = capabilities,
+    on_attach = on_attach,
+}
+
+require('lspconfig')['ruby_ls'].setup{
+    on_attach = on_attach,
+}
+
+require('lspconfig')['rust_analyzer'].setup{
     on_attach = on_attach,
 }
