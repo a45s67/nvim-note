@@ -67,6 +67,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
+    " navigation: harpoon
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'ThePrimeagen/harpoon', { 'branch': 'harpoon2' }
+
 "    Plug 'vim-airline/vim-airline'
 "    Plug 'vim-airline/vim-airline-themes'
 
