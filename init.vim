@@ -118,7 +118,6 @@ call plug#begin('~/.vim/plugged')
     " lsp
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/cmp-nvim-lsp'
-    Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
     Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'

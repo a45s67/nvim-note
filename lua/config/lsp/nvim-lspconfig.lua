@@ -114,7 +114,7 @@ require'lspconfig'.marksman.setup{
     on_attach = on_attach,
 }
 
-require('lspconfig')['ruby_ls'].setup{
+require('lspconfig')['ruby_lsp'].setup{
     on_attach = on_attach,
 }
 
