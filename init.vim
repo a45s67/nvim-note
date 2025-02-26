@@ -1,3 +1,5 @@
+lua require("config.lazy")
+
 " ===== init =====
 " :help terminal-emulator
 tnoremap <Esc> <C-\><C-n>
@@ -51,50 +53,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'ilyachur/cmake4vim'
 
     " For edit
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'preservim/nerdcommenter'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-    Plug 'tpope/vim-surround'
-    Plug 'phaazon/hop.nvim'
-    " For formatting
-    Plug 'rhysd/vim-clang-format'
-    Plug 'Chiel92/vim-autoformat'
 
-    " git integrate
-    Plug 'tpope/vim-fugitive'
 
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-
-    " navigation: harpoon
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'ThePrimeagen/harpoon', { 'branch': 'harpoon2' }
-
-"    Plug 'vim-airline/vim-airline'
-"    Plug 'vim-airline/vim-airline-themes'
-
-    " Symbol tree
-    Plug 'liuchengxu/vista.vim'
-    " Status line
-    Plug 'hoob3rt/lualine.nvim'
-    Plug 'kdheepak/tabline.nvim'
-"   Plug 'Mofiqul/vscode.nvim'
-
-"    Plug 'kyazdani42/nvim-web-devicons' " for file icons
-"    Plug 'kyazdani42/nvim-tree.lua'
-    Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'kristijanhusak/defx-git'
-    Plug 'stevearc/oil.nvim'
-    
     " I turned to clangd now which uses the new semantic token protocal the
     " plugin is not supporting. So I turned it off. 
     " Plug 'jackguo380/vim-lsp-cxx-highlight'
  
-    " Python syntax highlighting
-    " NOTE: The :UpdateRemotePlugins might not work properly in vim-plug
-    " posthook, see https://github.com/gelguy/wilder.nvim/issues/109
-    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
     " Color themes
     " Plug 'ray-x/aurora'
@@ -112,34 +76,9 @@ call plug#begin('~/.vim/plugged')
     " Plug 'RRethy/nvim-base16'
     " Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 
-    " log highlight
-    Plug 'mtdl9/vim-log-highlighting'
-    
-    " lsp
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'hrsh7th/cmp-nvim-lsp'
-    Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
-    Plug 'hrsh7th/cmp-buffer'
-    Plug 'hrsh7th/cmp-path'
-    Plug 'hrsh7th/cmp-cmdline'
-    Plug 'hrsh7th/nvim-cmp'
-    Plug 'quangnguyen30192/cmp-nvim-ultisnips'
     " treesitter
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'Badhi/nvim-treesitter-cpp-tools', {'for': ['cpp']}
     " To check current color group
     " Plug 'nvim-treesitter/playground'
-
-    Plug 'preservim/tagbar' 
-
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-    Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
-    Plug 'junegunn/vim-easy-align'
-
-    Plug 'junegunn/goyo.vim'
-
-    " latex support
-    Plug 'lervag/vimtex'
 
     " Ansi terminal color code reslover
     Plug 'powerman/vim-plugin-AnsiEsc'
@@ -149,19 +88,10 @@ call plug#begin('~/.vim/plugged')
         Plug 'preservim/vimux'
     endif
 
-    " Debugger
-    Plug 'puremourning/vimspector'
-
     " Git Util
     Plug 'APZelos/blamer.nvim'
-    Plug 'pwntester/octo.nvim'
-    " Dependencies of octo.nvim
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
-    Plug 'nvim-tree/nvim-web-devicons'
 
     " Fancy UI
-    Plug 'rcarriga/nvim-notify'
     Plug 'kevinhwang91/nvim-bqf'
 
     " package manager
@@ -178,24 +108,6 @@ let scheme = rand_schemes[rand(seed) % (len(rand_schemes) ) ]
 exec 'colorscheme' scheme 
 hi Normal guibg=NONE ctermbg=NONE
 
-" ======= easy motion ======
-" <Leader>f{char} to move to {char}
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
-
-" s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
-
-" Move to line
-map <Leader>L <Plug>(easymotion-bd-jk)
-nmap <Leader>L <Plug>(easymotion-overwin-line)
-
-" Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
-
-
-" xxxxxx easy motion end xxxxxxx
 " ======= tagbar ======
 nnoremap <F8> :TagbarToggle<CR>
 
@@ -229,3 +141,5 @@ hi Pmenu guibg=NONE
 " ======== some lua plugin settings ==========
 lua require("config.lsp")
 lua require("config.treesitter")
+
+lua require('leap').create_default_mappings()
