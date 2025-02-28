@@ -24,8 +24,9 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    -- import your plugins
+    -- import plugins with complex settings
     { import = "plugins" },
+
     -- lsp
     'neovim/nvim-lspconfig',
     'hrsh7th/cmp-nvim-lsp',
@@ -35,18 +36,25 @@ require("lazy").setup({
     'hrsh7th/cmp-cmdline',
     'hrsh7th/nvim-cmp',
     'quangnguyen30192/cmp-nvim-ultisnips',
+    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+
     -- snips
     'SirVer/ultisnips',
     'honza/vim-snippets',
 
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
-
+    -- move, navigate
     'phaazon/hop.nvim',
     {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
         dependencies = { "nvim-lua/plenary.nvim" }
     },
+    {
+        'ggandor/leap.nvim',
+        dependencies = { "tpope/vim-repeat" }
+    },
+
+    -- markdown
     {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -57,10 +65,12 @@ require("lazy").setup({
         'dhruvasagar/vim-table-mode',
         ft = { "markdown" },
     },
+
+    -- http testing
     {
-        'ggandor/leap.nvim',
-        dependencies = { "tpope/vim-repeat" }
-    }
+        'mistweaverco/kulala.nvim',
+    	opts = { global_keymaps = true}
+    },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
