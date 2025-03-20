@@ -1,7 +1,7 @@
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+local opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<space>d', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
@@ -12,15 +12,15 @@ local on_attach = function(client, bufnr)
     local notifier = vim.notify("Try to attach LSP to this buffer...")
     -- Disable coc to prevent collision, and revert the tagfunc setting.
     if (vim.g.coc_enabled == 1) then
-        notifier = vim.notify("Try to attach LSP to this buffer...Disabling Coc", "warn", {replace = notifier})
+        notifier = vim.notify("Try to attach LSP to this buffer...Disabling Coc", "warn", { replace = notifier })
         vim.api.nvim_command('CocDisable')
         vim.api.nvim_buf_set_option(bufnr, "tagfunc", "v:lua.vim.lsp.tagfunc")
     end
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    notifier = vim.notify("Try to attach LSP to this buffer...Setting keymaps", "warn", {replace = notifier})
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    notifier = vim.notify("Try to attach LSP to this buffer...Setting keymaps", "warn", { replace = notifier })
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', '<C-]>', vim.lsp.buf.definition, bufopts)
@@ -35,11 +35,11 @@ local on_attach = function(client, bufnr)
     end, bufopts)
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set({'n', 'v'}, '<space>a', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set({ 'n', 'v' }, '<space>a', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set('n', '<space>=', function() vim.lsp.buf.format { async = true } end, bufopts)
     vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-    vim.notify("Try to attach LSP to this buffer...Successed!", "info", {replace = notifier})
+    vim.notify("Try to attach LSP to this buffer...Successed!", "info", { replace = notifier })
 end
 
 local capabilities = require("config.lsp.nvim-cmp").default_capabilities()
@@ -56,7 +56,7 @@ else
     clangd_bin = 'clangd-17'
 end
 
-require('lspconfig')['clangd'].setup{
+require('lspconfig')['clangd'].setup {
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
@@ -75,16 +75,16 @@ require('lspconfig')['clangd'].setup{
     },
 }
 
-require('lspconfig')['gopls'].setup{
+require('lspconfig')['gopls'].setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }
-require('lspconfig')['biome'].setup{
+require('lspconfig')['biome'].setup {
     capabilities = capabilities,
     on_attach = on_attach
 }
 
-require('lspconfig')['ruff'].setup{
+require('lspconfig')['ruff'].setup {
     on_attach = on_attach,
     init_options = {
         settings = {
@@ -93,7 +93,7 @@ require('lspconfig')['ruff'].setup{
         }
     }
 }
-require('lspconfig')['pyright'].setup{
+require('lspconfig')['pyright'].setup {
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
@@ -103,25 +103,25 @@ require('lspconfig')['pyright'].setup{
         },
         python = {
             analysis = {
-                ignore = { '*' }, -- Using Ruff
+                ignore = { '*' },         -- Using Ruff
                 typeCheckingMode = 'off', -- Using mypy
             },
         },
     }
 }
-require'lspconfig'.marksman.setup{
+require 'lspconfig'.marksman.setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }
 
-require('lspconfig')['ruby_lsp'].setup{
+require('lspconfig')['ruby_lsp'].setup {
     on_attach = on_attach,
 }
 
-require('lspconfig')['rust_analyzer'].setup{
+require('lspconfig')['rust_analyzer'].setup {
     on_attach = on_attach,
 }
 
-require('lspconfig')['lua_ls'].setup{
+require('lspconfig')['lua_ls'].setup {
     on_attach = on_attach,
 }
