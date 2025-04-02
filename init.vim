@@ -7,7 +7,7 @@ tnoremap <Esc> <C-\><C-n>
 " set clipboard=unnamedplus
 " set file encoding
 " ref: https://ppt.cc/PMkV
-set fileencodings=utf8,big5
+set fileencodings=ucs-bom,utf-8,utf-16le,default,latin1,big5,gb2312,cp936,gbk,gb18030
 set fileencoding=utf8
 " set termencoding=utf8
 " let &termencoding = &encoding
@@ -229,3 +229,4 @@ hi Pmenu guibg=NONE
 " ======== some lua plugin settings ==========
 lua require("config.lsp")
 lua require("config.treesitter")
+
