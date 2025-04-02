@@ -82,6 +82,8 @@ require("lazy").setup({
             opts = {},
             -- stylua: ignore
             keys = {
+                -- One can show the meaning of n,x,o,c, ... with :help map-table
+                -- https://www.reddit.com/r/neovim/comments/15lrahk/lazynvim_and_choosing_multiple_modes_for_keys/
                 { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
                 { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
                 { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
