@@ -38,7 +38,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set({ 'n', 'v' }, '<space>a', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set('n', '<space>=', function() vim.lsp.buf.format { async = true } end, bufopts)
-    vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+    -- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
     vim.notify("Try to attach LSP to this buffer...Successed!", "info", { replace = notifier })
 end
 
