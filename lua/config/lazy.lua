@@ -149,6 +149,10 @@ require("lazy").setup({
             'echasnovski/mini.nvim',
             version = '*'
         },
+        {
+            "mason-org/mason.nvim",
+            opts = {}
+        }
 
     },
     -- Configure any other settings here. See the documentation for more details.

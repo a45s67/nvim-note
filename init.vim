@@ -47,19 +47,6 @@ nnoremap <C-[> <C-T>
 
 " ===== Plugin =====
 call plug#begin('~/.vim/plugged')
-    "
-    " Plug 'mhinz/vim-startify'
-    " For project
-    Plug 'ilyachur/cmake4vim'
-
-    " For edit
-
-
-    " I turned to clangd now which uses the new semantic token protocal the
-    " plugin is not supporting. So I turned it off. 
-    " Plug 'jackguo380/vim-lsp-cxx-highlight'
- 
-
     " Color themes
     " Plug 'ray-x/aurora'
     Plug 'savq/melange'
@@ -94,9 +81,6 @@ call plug#begin('~/.vim/plugged')
     " Fancy UI
     Plug 'kevinhwang91/nvim-bqf'
 
-    " package manager
-    Plug 'williamboman/mason.nvim'
-    Plug 'williamboman/mason-lspconfig.nvim'
     call plug#end()
 
 
