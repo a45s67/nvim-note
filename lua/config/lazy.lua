@@ -115,7 +115,6 @@ require("lazy").setup({
                 },
             },
 
-        'phaazon/hop.nvim',
         {
             "ThePrimeagen/harpoon",
             branch = "harpoon2",
