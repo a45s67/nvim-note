@@ -145,6 +145,9 @@ require("lazy").setup({
             },
         },
         {
+            "seblyng/roslyn.nvim",
+        },
+        {
             'echasnovski/mini.nvim',
             version = '*'
         },
