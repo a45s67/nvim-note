@@ -154,7 +154,9 @@ require("lazy").setup({
         {
             "mason-org/mason.nvim",
             opts = {}
-        }
+        },
+        { "savq/melange-nvim" },
+        { "junegunn/seoul256.vim" },
 
     },
     -- Configure any other settings here. See the documentation for more details.

@@ -45,49 +45,11 @@ set expandtab
 " Ctags
 nnoremap <C-[> <C-T>
 
-" ===== Plugin =====
-call plug#begin('~/.vim/plugged')
-    " Color themes
-    " Plug 'ray-x/aurora'
-    Plug 'savq/melange'
-    Plug 'yashguptaz/calvera-dark.nvim'
-    Plug 'junegunn/seoul256.vim'
-    Plug 'jnurmine/Zenburn'
-    Plug 'rose-pine/neovim'
-    " Plug 'rktjmp/lush.nvim'
-    " Plug 'mcchrish/zenbones.nvim'
-    " Plug 'rebelot/kanagawa.nvim'
-    " Plug 'fenetikm/falcon'
-    " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-    " Plug 'marko-cerovac/material.nvim'
-    " Plug 'RRethy/nvim-base16'
-    " Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
-
-    " treesitter
-    " To check current color group
-    " Plug 'nvim-treesitter/playground'
-
-    " Ansi terminal color code reslover
-    Plug 'powerman/vim-plugin-AnsiEsc'
-
-    " tmux integration
-    if !has('win64')
-        Plug 'preservim/vimux'
-    endif
-
-    " Git Util
-    Plug 'APZelos/blamer.nvim'
-
-    " Fancy UI
-    Plug 'kevinhwang91/nvim-bqf'
-
-    call plug#end()
-
 
 " Color scheme
 " https://vi.stackexchange.com/questions/807/how-to-generate-random-numbers
 let seed = srand()
-let rand_schemes = ['seoul256', 'melange']
+let rand_schemes = ['melange']
 let scheme = rand_schemes[rand(seed) % (len(rand_schemes) ) ] 
 exec 'colorscheme' scheme 
 hi Normal guibg=NONE ctermbg=NONE
